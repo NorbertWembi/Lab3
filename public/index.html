@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HottizaPace</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <h1>HottizaPace</h1>
+            <p>Explore the Star Wars universe</p>
+        </div>
+
+        <span class="header-label">By Norbert Wembi</span>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">A GALAXY OF CHARACTERS</p>
+                <h2>Discover the people of Star Wars</h2>
+                <p>Explore character information from across the galaxy.</p>
+            </div>
+
+            <div class="character-count">
+                <span id="characterCount">0</span>
+                <p>Characters available</p>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="search-heading">
+                <h2>Character Directory</h2>
+                <p>Search, view, add, or remove characters.</p>
+            </div>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search characters by name..."
+                aria-label="Search characters"
+            >
+
+            <p id="statusMessage" class="status-message" role="status">
+                Loading characters...
+            </p>
+
+            <div id="characterList" class="character-list"></div>
+
+            <button id="loadMoreButton" class="load-more">
+                Load More
+            </button>
+        </section>
+
+        <section id="detailsSection" class="details-section" hidden>
+            <div class="details-heading">
+                <div>
+                    <p class="eyebrow">CHARACTER INFORMATION</p>
+                    <h2 id="detailName"></h2>
+                </div>
+
+                <button id="closeDetails" class="close-button">
+                    Close
+                </button>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span>Height</span>
+                    <p id="detailHeight"></p>
+                </div>
+
+                <div class="detail-item">
+                    <span>Mass</span>
+                    <p id="detailMass"></p>
+                </div>
+
+                <div class="detail-item">
+                    <span>Gender</span>
+                    <p id="detailGender"></p>
+                </div>
+
+                <div class="detail-item">
+                    <span>Homeworld</span>
+                    <p id="detailHomeworld"></p>
+                </div>
+            </div>
+
+            <button id="deleteDetailButton" class="delete-button">
+                Delete Character
+            </button>
+        </section>
+
+        <section class="add-section">
+            <h2>Add a Character</h2>
+            <p>Enter the required character information to create a record.</p>
+
+            <form id="addCharacterForm">
+                <label for="name">Name</label>
+                <input id="name" name="name" required>
+
+                <label for="height">Height</label>
+                <input id="height" name="height" required>
+
+                <label for="mass">Mass</label>
+                <input id="mass" name="mass" required>
+
+                <label for="gender">Gender</label>
+                <input id="gender" name="gender" required>
+
+                <label for="homeworld">Homeworld URL (origin URL)</label>
+                <input
+                    id="homeworld"
+                    name="homeworld"
+                    type="url"
+                    placeholder="https://swapi.info/api/planets/1"
+                    required
+                >
+
+                <button type="submit" class="add-button">
+                    Add Character
+                </button>
+            </form>
+
+            <p id="formMessage" class="status-message" role="status"></p>
+        </section>
+
+        <footer>
+            <p>HottizaPace · Star Wars Character Catalog</p>
+            <p>Character information fetched from SWAPI</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
